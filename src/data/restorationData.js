@@ -65,6 +65,54 @@ export const restorationSteps = [
   '平整定型 8 小时后转入无酸盒暂存。',
 ]
 
+// 当日工序流程板使用的工序目录。
+// 注意：detail 与 restorationSteps 的四步标准内容保持一致，只允许新增
+// id / shortName 等编排元数据，不允许改写原有四步内容本身。
+export const restorationProcessSteps = [
+  {
+    id: 'document',
+    shortName: '拍照建档',
+    detail: restorationSteps[0],
+  },
+  {
+    id: 'dusting',
+    shortName: '吸附除尘',
+    detail: restorationSteps[1],
+  },
+  {
+    id: 'patching',
+    shortName: '回软补纸',
+    detail: restorationSteps[2],
+  },
+  {
+    id: 'flattening',
+    shortName: '平整定型',
+    detail: restorationSteps[3],
+  },
+]
+
+// 可编排当日工序的修复师（仅用于排班下拉，不改动任务清单里的负责人）。
+export const restorationStaff = [
+  { id: 'han-che', name: '韩澈' },
+  { id: 'lu-ning', name: '陆宁' },
+  { id: 'zhou-tian', name: '周恬' },
+  { id: 'shen-yi', name: '沈屹' },
+]
+
+// 修复室资源，同一修复室同一时段只能容纳一支工序。
+export const restorationRooms = [
+  { id: 'photo', name: '影像建档室' },
+  { id: 'dry', name: '干除尘室' },
+  { id: 'wet', name: '湿处理修复室' },
+  { id: 'press', name: '压平定型室' },
+]
+
+// 当日工作时间基准：最早 09:00 开工，用于推算各工序时段。
+export const workdayStartMinutes = 9 * 60
+
+// 常用时长预设（分钟），修复师仍可自行输入。
+export const durationPresets = [40, 60, 90, 120]
+
 export const restorationTasks = [
   {
     title: '明抄本县志残卷',

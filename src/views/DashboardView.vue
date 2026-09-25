@@ -4,6 +4,7 @@ import StatCard from '../components/common/StatCard.vue'
 import BatchGrid from '../components/restoration/BatchGrid.vue'
 import EnvironmentCards from '../components/restoration/EnvironmentCards.vue'
 import HeroBanner from '../components/restoration/HeroBanner.vue'
+import ScheduleOverview from '../components/schedule/ScheduleOverview.vue'
 import {
   restorationBatches,
   restorationEnvironment,
@@ -35,6 +36,10 @@ const statCards = [
         :value="card.value"
       />
     </section>
+
+    <PanelSection title="当日进度" badge="工序流程板">
+      <ScheduleOverview />
+    </PanelSection>
 
     <section class="two-column">
       <PanelSection title="重点批次" badge="优先处理">
