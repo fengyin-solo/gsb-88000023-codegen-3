@@ -4,6 +4,7 @@ import StatCard from '../components/common/StatCard.vue'
 import BatchGrid from '../components/restoration/BatchGrid.vue'
 import EnvironmentCards from '../components/restoration/EnvironmentCards.vue'
 import HeroBanner from '../components/restoration/HeroBanner.vue'
+import ScheduleOverview from '../components/restoration/ScheduleOverview.vue'
 import {
   restorationBatches,
   restorationEnvironment,
@@ -36,15 +37,22 @@ const statCards = [
       />
     </section>
 
+    <PanelSection title="当日进度" badge="流程板联动">
+      <ScheduleOverview />
+    </PanelSection>
+
     <section class="two-column">
       <PanelSection title="重点批次" badge="优先处理">
         <BatchGrid :items="restorationBatches" />
       </PanelSection>
 
-      <PanelSection title="当日工序" badge="修复流程">
+      <PanelSection title="标准工序四步" badge="内容固定不可改写">
         <ol class="step-list">
           <li v-for="step in restorationSteps" :key="step">{{ step }}</li>
         </ol>
+        <p class="step-lock-note">
+          四步内容为修复规范，流程板只安排顺序、时长、责任人与修复室，不改写内容。
+        </p>
       </PanelSection>
     </section>
 
@@ -80,6 +88,14 @@ const statCards = [
 
 .step-list li + li {
   margin-top: 12px;
+}
+
+.step-lock-note {
+  margin: 14px 0 0;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(79, 57, 32, 0.18);
+  font-size: 0.78rem;
+  color: #8b7150;
 }
 
 @media (max-width: 980px) {

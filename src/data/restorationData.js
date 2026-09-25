@@ -1,7 +1,7 @@
 export const restorationNavigation = [
   { label: '修复总览', to: '/' },
   { label: '批次档案', to: '/batches' },
-  { label: '任务清单', to: '/tasks' },
+  { label: '任务清单 · 当日编排', to: '/tasks' },
 ]
 
 export const restorationHero = {
@@ -58,11 +58,27 @@ export const restorationEnvironment = [
   },
 ]
 
+// 标准工序四步内容，流程板只引用、不改写
 export const restorationSteps = [
   '拍照建档并标注虫蛀起止页。',
   '低压吸附除尘，保留边角碎纤维。',
   '喷雾回软后局部补纸，不做整页过度清洗。',
   '平整定型 8 小时后转入无酸盒暂存。',
+]
+
+export const restorationStepNames = ['拍照建档', '低压除尘', '回软补纸', '平整定型']
+
+export const restorationOwners = [
+  { name: '韩澈', title: '古籍修复师' },
+  { name: '陆宁', title: '古籍修复师' },
+  { name: '周恬', title: '托裱技师' },
+  { name: '沈砚', title: '照相建档员' },
+]
+
+export const restorationRooms = [
+  { id: 'room-1', name: '修复室 1', note: '除尘操作间' },
+  { id: 'room-2', name: '修复室 2', note: '补纸操作台' },
+  { id: 'room-3', name: '修复室 3', note: '压平定型区' },
 ]
 
 export const restorationTasks = [
